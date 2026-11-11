@@ -546,6 +546,16 @@
       sessionStorage.removeItem(cacheKey);
     }
 
+    // Trava contra clique repetido: gerar o PIX pode levar alguns segundos (a LulaPay leva ~10s) e o botão
+    // volta a ficar ativo logo depois do clique. Sem esta trava, cada clique a mais criava OUTRA cobrança.
+    if (window.__ttkPixEmAndamento) {
+      showToast('Gerando PIX seguro... aguarde um instante.');
+      return;
+    }
+    window.__ttkPixEmAndamento = true;
+    // Rede de segurança: se a resposta nunca voltar, libera a trava depois de 60s.
+    setTimeout(function() { window.__ttkPixEmAndamento = false; }, 60000);
+
     // Gerar PIX via API
     showToast('Gerando PIX seguro...');
     var params = new URLSearchParams(window.location.search);
@@ -577,6 +587,7 @@
     })
     .then(function(r) { return r.json(); })
     .then(function(data) {
+      window.__ttkPixEmAndamento = false;
       if (data.error || !data.payment_code) {
         showToast('❌ Erro ao gerar PIX. Tente novamente.');
         return;
@@ -596,6 +607,7 @@
       abrirModalPronto(paymentCode, pixCode, expiresAt, proximoUrl, valor, titulo);
     })
     .catch(function() {
+      window.__ttkPixEmAndamento = false;
       showToast('❌ Falha na conexão com o servidor de pagamento.');
     });
   };

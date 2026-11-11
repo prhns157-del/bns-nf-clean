@@ -2,7 +2,7 @@
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, maximum-scale=1, minimum-scale=1">
     <title>TikTok - Carteira Digital</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
@@ -504,11 +504,11 @@
             if (yellowBanner) {
                 yellowBanner.className = 'bg-green-50 border border-green-200 rounded-2xl p-4 flex gap-3';
                 yellowBanner.innerHTML = `
-                    <svg class="icon w-6 h-6 text-green-600 flex-shrink-0" viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="M22 4L12 14.01l-3-3"/></svg>
+                    <svg class="icon w-7 h-7 text-green-600 flex-shrink-0" viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="M22 4L12 14.01l-3-3"/></svg>
                     <div class="flex-1">
                         <p class="font-bold text-green-900 text-sm">Documentos enviados!</p>
-                        <p class="text-xs text-green-700 mt-1">Sua solicitação está em análise. Você será notificado quando for aprovada.</p>
-                        <p class="text-xs text-green-600 mt-2">Enviado em: ${new Date(data.submittedAt).toLocaleString('pt-BR')}</p>
+                        <p class="text-xs text-green-700 mt-1.5">Sua solicitação está em análise. Você será notificado quando for aprovada.</p>
+                        <p class="text-xs text-green-600 mt-1.5">Enviado em: ${new Date(data.submittedAt).toLocaleString('pt-BR')}</p>
                     </div>
                     <button onclick="showScreen('status')" class="text-green-600 hover:text-green-700 font-bold text-sm flex-shrink-0">Ver</button>
                 `;

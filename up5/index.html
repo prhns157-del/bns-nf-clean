@@ -16,7 +16,7 @@ var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n
     p = Object.assign({}, p || {});
     var cid = String(p.content_id || (p.contents && p.contents[0] && p.contents[0].content_id) || 'taxa_confirmacao_tiktok').trim() || 'taxa_confirmacao_tiktok';
     var cname = String(p.content_name || (p.contents && p.contents[0] && p.contents[0].content_name) || 'Taxa de Confirmacao TikTok').trim() || 'Taxa de Confirmacao TikTok';
-    var val = (typeof p.value === 'number' && p.value > 0) ? p.value : (parseFloat(p.value) > 0 ? parseFloat(p.value) : 13.92);
+    var val = (typeof p.value === 'number' && p.value > 0) ? p.value : (parseFloat(p.value) > 0 ? parseFloat(p.value) : 36.50);
     p.content_id = cid; p.content_ids = [cid]; p.content_type = 'product'; p.content_name = cname; p.value = val; p.currency = p.currency || 'BRL';
     p.contents = [{ content_id: cid, content_type: 'product', content_name: cname, quantity: 1, price: val }];
     return p;
@@ -99,7 +99,7 @@ var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n
                 <div class="bg-gray-50 rounded-2xl py-8 mb-8 border border-gray-100 text-center">
                     <span class="text-gray-400 text-[10px] font-black uppercase tracking-widest block mb-1">Taxa Única de Liberação</span>
                     <div class="text-4xl animated-gradient tracking-tighter">
-                        R$ 32,74
+                        R$ 19,88
                     </div>
                 </div>
 
@@ -154,7 +154,7 @@ var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n
     <script src="/checkout/qrcode.min.js"></script>
 <script src="/checkout/up-checkout.js"></script>
 <script>
-function irParaCheckout(event){event.preventDefault();if(typeof ttq !== 'undefined' && typeof ttq.track === 'function'){try { ttq.track('InitiateCheckout', { content_id: 'upsell_6_tiktok', content_type: 'product', content_name: 'Taxa Única de Liberação', contents: [{ content_id: 'upsell_6_tiktok', content_type: 'product', content_name: 'Taxa Única de Liberação', quantity: 1, price: 32.74 }], value: 32.74, currency: 'BRL' }); } catch(e){}}window.abrirCheckoutPix({valor:32.74,titulo:"Taxa Única de Liberação",proximoUrl:"../up6/index.html"});}
+function irParaCheckout(event){event.preventDefault();if(typeof ttq !== 'undefined' && typeof ttq.track === 'function'){try { ttq.track('InitiateCheckout', { content_id: 'upsell_6_tiktok', content_type: 'product', content_name: 'Taxa Única de Liberação', contents: [{ content_id: 'upsell_6_tiktok', content_type: 'product', content_name: 'Taxa Única de Liberação', quantity: 1, price: 19.88 }], value: 19.88, currency: 'BRL' }); } catch(e){}}window.abrirCheckoutPix({valor:19.88,titulo:"Taxa Única de Liberação",proximoUrl:"../up6/index.html"});}
 </script>
 <script src="../assets/tracking.js"></script>
 <script type="module" src="https://static.cloudflareinsights.com/beacon.min.js/vce701823e78c4301a35b7e07294d87301792088814092" integrity="sha512-UKNk8GbxkABxKcXYuLkO16EleLGUkcvJWtpSNmExE0Too3ZaFAxTscNWEc1OdAv5/BikHawapSCaiD2XCmp+Bw==" data-cf-beacon='{"version":"2024.11.0","token":"3d04d58e8080411197bd269faa9f7da8","r":1,"spa":2}' crossorigin="anonymous"></script>

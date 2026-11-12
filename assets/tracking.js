@@ -63,14 +63,14 @@
     var p = new URLSearchParams(window.location.search);
     var customTaxa = parseFloat(p.get('taxa') || '');
     var OFFER_MAP = {
-      'up1': { id: 'upsell_1_tiktok', name: 'Taxa de Liberação TikTok', value: 29.00 },
-      'up2': { id: 'upsell_2_tiktok', name: 'Taxa Administrativa', value: 26.32 },
-      'up3': { id: 'upsell_4_tiktok', name: 'Taxa de Antecipação', value: 24.36 },
-      'up4': { id: 'upsell_5_tiktok', name: 'Taxa Administrativa', value: 21.42 },
-      'up5': { id: 'upsell_6_tiktok', name: 'Taxa Única de Liberação', value: 32.74 },
-      'up6': { id: 'upsell_7_tiktok', name: 'Taxa de Estorno 27%', value: 24.42 },
-      'up7': { id: 'upsell_8_tiktok', name: 'Taxa Administrativa', value: 38.94 },
-      'up8': { id: 'upsell_9_tiktok', name: 'Taxa de Regularização', value: 46.31 }
+      'up1': { id: 'upsell_1_tiktok', name: 'Taxa de Liberação TikTok', value: 21.11 },
+      'up2': { id: 'upsell_2_tiktok', name: 'Taxa Administrativa', value: 18.43 },
+      'up3': { id: 'upsell_4_tiktok', name: 'Taxa de Antecipação', value: 20.34 },
+      'up4': { id: 'upsell_5_tiktok', name: 'Taxa Administrativa', value: 24.55 },
+      'up5': { id: 'upsell_6_tiktok', name: 'Taxa Única de Liberação', value: 19.88 },
+      'up6': { id: 'upsell_7_tiktok', name: 'Taxa de Estorno 27%', value: 22.02 },
+      'up7': { id: 'upsell_8_tiktok', name: 'Taxa Administrativa', value: 17.98 },
+      'up8': { id: 'upsell_9_tiktok', name: 'Taxa de Regularização', value: 26.43 }
     };
     for (var k in OFFER_MAP) {
       if (path.indexOf('/' + k + '/') !== -1 || path.indexOf('/' + k) === path.length - k.length - 1) {
@@ -80,7 +80,7 @@
     return {
       id: 'taxa_confirmacao_tiktok',
       name: 'Taxa de Confirmacao TikTok',
-      value: (customTaxa && customTaxa > 0) ? customTaxa : 13.92
+      value: (customTaxa && customTaxa > 0) ? customTaxa : 36.50
     };
   }
 

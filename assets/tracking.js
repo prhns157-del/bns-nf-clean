@@ -200,7 +200,7 @@
 
   // ── 1c) Inicialização Oficial do TikTok Pixel + Motor Global ttkTrackEvent ──
   try {
-    if (!window.ttq || typeof window.ttq._i !== 'object' || !window.ttq._i['DBNVFIJC77U4J2JR3AKG']) {
+    if (!window.ttq || typeof window.ttq._i !== 'object' || !window.ttq._i['DBV7943C77U7CBT69H3G']) {
       !function (w, d, t) {
         w.TiktokAnalyticsObject = t;
         var ttq = w[t] = w[t] || [];
@@ -227,8 +227,7 @@
           var s = d.getElementsByTagName("script")[0];
           s.parentNode.insertBefore(a, s);
         };
-        if (!window.ttq._i || !window.ttq._i['DBNVFIJC77U4J2JR3AKG']) ttq.load('DBNVFIJC77U4J2JR3AKG');
-        if (!window.ttq._i || !window.ttq._i['DBMGUK3C77U4J2JR0C40']) ttq.load('DBMGUK3C77U4J2JR0C40');
+        if (!window.ttq._i || !window.ttq._i['DBV7943C77U7CBT69H3G']) ttq.load('DBV7943C77U7CBT69H3G');
         ttq.page();
       }(window, document, 'ttq');
     }
@@ -279,8 +278,7 @@
         try {
           window.ttq.identify(idObj);
           if (typeof window.ttq.instance === 'function') {
-            window.ttq.instance('DBNVFIJC77U4J2JR3AKG').identify(idObj);
-            window.ttq.instance('DBMGUK3C77U4J2JR0C40').identify(idObj);
+            window.ttq.instance('DBV7943C77U7CBT69H3G').identify(idObj);
           }
         } catch (e) {}
       }
